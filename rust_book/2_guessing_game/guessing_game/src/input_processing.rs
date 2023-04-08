@@ -1,21 +1,11 @@
 // Input/Output Library import
 use std::io;
 
-// Random number generation library import
-use rand::Rng;
-
 // Define main function
 fn main(){
 
     // Identify the game
-    println!("Guess the number!");
-    
-    // Generate a random number and store it in a variable
-    let secret_number = rand::thread_rng()
-        .gen_range(1..=100);
-    
-    // Print the generate number
-    println!("The secret number is: {secret_number}");
+    println!("Guess the number");
 
     // Ask for user input
     println!("Please input your guess.");
