@@ -14,3 +14,5 @@ I'm going to use the following resources to help me find my way through the prog
 ## Personal notes
 
 Booker marker:
+
+https://doc.rust-lang.org/stable/book/ch02-00-guessing-game-tutorial.html
