@@ -4,9 +4,6 @@ use std::io;
 // Random number generation library import
 use rand::Rng;
 
-// Comparison library import - object ordering enum variants
-use std::cmp::Ordering;
-
 // Define main function
 fn main(){
 
@@ -32,24 +29,7 @@ fn main(){
         .read_line(&mut guess)
         // If the readline result is error - print error message
         .expect("Failed to read line");
-    
-    // Remove spaces from the user guess
-    let guess: u32 = guess.trim()
-        // Parse the input from the user to the variable data type
-        .parse()
-        // If something goes wrong - generate an error
-        .expect("Please type a number!");
 
     // Print the users guess
     println!("You guessed: {guess}");
-
-    // Use string comparison and compare the result with the possible states to decide what to do
-    match guess.cmp(&secret_number){
-        // If guess < secret_number - too small
-        Ordering::Less => println!("Too small!"),
-        // If guess > secret_number - too big
-        Ordering::Greater => println!("Too big!"),
-        // If guess = secret_number - user wins
-        Ordering::Equal => println!("You win!"),
-    }
 }
