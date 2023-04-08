@@ -15,4 +15,4 @@ I'm going to use the following resources to help me find my way through the prog
 
 Booker marker:
 
-https://doc.rust-lang.org/stable/book/ch02-00-guessing-game-tutorial.html
+https://doc.rust-lang.org/stable/book/ch03-00-common-programming-concepts.html
