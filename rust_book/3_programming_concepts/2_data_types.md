@@ -1,6 +1,6 @@
 # Data Types
 
-Rust is statically typed language - so it must know all variables types at compile time. The compiler can usually infer th etype we want based on the value. In cases we want to select one of many types, we must add type annotation. For example - we can declare a string of an integer and parse it. This could be an integer or a string - and we will need to use type annotation to specify the type.
+Rust is statically typed language - so it must know all variables types at compile time. The compiler can usually infer the type we want based on the value. In cases we want to select one of many types, we must add type annotation. For example - we can declare a string of an integer and parse it. This could be an integer or a string - and we will need to use type annotation to specify the type.
 
 ```rust
 fn main(){
@@ -26,7 +26,7 @@ Scalar types represent a single value. Rust has four primary scalar types:
 
 ### Integer types
 
-An integer is a number without a fractional component. Integers are normally declared based on the bit length and if theyare signed (i) or unsigned (u). Note that the "i" in the integer data types stands for "signed", while the "u" in the unsigned integer data types stands for "unsigned". The maximum and minimum values are calculated using two's complement representation. Signed and unsigned refer to whether it's possible for the number to be negative or not (signed/unsigned). Signed numbers are stored using [two's complements](https://en.wikipedia.org/wiki/Two%27s_complement) representation. 
+An integer is a number without a fractional component. Integers are normally declared based on the bit length and if they're signed (i) or unsigned (u). Note that the "i" in the integer data types stands for "signed", while the "u" in the unsigned integer data types stands for "unsigned". The maximum and minimum values are calculated using two's complement representation. Signed and unsigned refer to whether it's possible for the number to be negative or not (signed/unsigned). Signed numbers are stored using [two's complements](https://en.wikipedia.org/wiki/Two%27s_complement) representation. 
 
 Signed numbers can represent numbers based on the following formula for the number of bits:
 ```
@@ -40,20 +40,22 @@ min(b) = 0
 max(b) = 2^(b)-1
 ```
 
-| Data Type | Size (bits) | Minimum Value | Maximum Value |
-| --- | --- | --- | --- |
-| `i8` | 8 | -128 | 127 |
-| `u8` | 8 | 0 | 255 |
-| `i16` | 16 | -32768 | 32767 |
-| `u16` | 16 | 0 | 65535 |
-| `i32` | 32 | -2147483648 | 2147483647 |
-| `u32` | 32 | 0 | 4294967295 |
-| `i64` | 64 | -9223372036854775808 | 9223372036854775807 |
-| `u64` | 64 | 0 | 18446744073709551615 |
-| `i128` | 128 | -170141183460469231731687303715884105728 | 170141183460469231731687303715884105727 |
-| `u128` | 128 | 0 | 340282366920938463463374607431768211455 |
-| `isize` | 32 or 64 (Architecture Based) | ^ | ^ |
-| `usize` | 32 or 64 (Architecture Based) | ^ | ^ |
+There are many types of integers we can use. By default, integers use `i32`. Below, we list the different numerical ranges we can represent using varying integer types for Rust:
+
+| Data Type | Size (bits) | Minimum Value (MIN)| Maximum Value (MAX) | Documentation |
+| --- | --- | --- | --- | --- |
+| `i8` | 8 | -128 | 127 | [i8 - Rust](https://doc.rust-lang.org/std/primitive.i8.html) |
+| `u8` | 8 | 0 | 255 | [u8 - Rust](https://doc.rust-lang.org/std/primitive.u8.html) |
+| `i16` | 16 | -32768 | 32767 | [i16 - Rust](https://doc.rust-lang.org/std/primitive.i16.html) |
+| `u16` | 16 | 0 | 65535 | [u16 - Rust](https://doc.rust-lang.org/std/primitive.i16.html) |
+| `i32` | 32 | -2147483648 | 2147483647 | [i32 - Rust](https://doc.rust-lang.org/std/primitive.i32.html) |
+| `u32` | 32 | 0 | 4294967295 | [u32 - Rust](https://doc.rust-lang.org/std/primitive.u32.html) |
+| `i64` | 64 | -9223372036854775808 | 9223372036854775807 | [i64 - Rust](https://doc.rust-lang.org/std/primitive.i64.html) |
+| `u64` | 64 | 0 | 18446744073709551615 | [u64 - Rust](https://doc.rust-lang.org/std/primitive.u64.html) |
+| `i128` | 128 | -170141183460469231731687303715884105728 | 170141183460469231731687303715884105727 | [i128 - Rust](https://doc.rust-lang.org/std/primitive.i128.html) |
+| `u128` | 128 | 0 | 340282366920938463463374607431768211455 | [u128 - Rust](https://doc.rust-lang.org/std/primitive.u128.html) |
+| `isize` | 32 or 64 (Architecture Based) | ^ | ^ | [isize - Rust](https://doc.rust-lang.org/std/primitive.isize.html) |
+| `usize` | 32 or 64 (Architecture Based) | ^ | ^ | [usize - Rust](https://doc.rust-lang.org/std/primitive.usize.html) |
 
 Integers can be declared as decimals, hexes, octals, binary or bytes. The symbol `_` can be used as visual separator, and don't impact the numbers value, e.g `1_000=1000`. The type suffix  can be used to declare numbers with their types explicitly, for example as `57u8`. See the table below for an example:
 
@@ -63,9 +65,7 @@ Integers can be declared as decimals, hexes, octals, binary or bytes. The symbol
 | Hex | 0xff | 
 | Octal | 0o77 | 
 | Binary | 0b1111_0000 | 
-| Byte (u8 only) | b'A' | 
-
-There are many types of integers we can use. By default, integers use i32.
+| Byte (u8 only) | b'A' |
 
 #### Integer Overflows
 
@@ -76,10 +76,23 @@ A variable of type `u8` can stored values between 0 and 255. If we try to set th
 We can deal with overflows in many ways:
 - `#[allow(arithmetic_overflow)]`: Disable compile time checks. In release mode, the operation will wrap around, and an error will happen in debug mode.
 - Wrapping methods: Use the integer methods `.wrapping_*` to wrap around operations.
-- Cheking methods: Return `None` using the integer methods `checked_*`. 
+- Checking methods: Return `None` using the integer methods `checked_*`. 
 - Overflowing methods: Return the value and a boolean indicating overflow with the integer methods `overflow_*`.
 - Saturating methods: Return the maximum/minimum value and ignore the remainder with the integer methods `saturating_*`.
 
 Observation: `*` can be any of the following values: `add`, `sub`, `mul`, `pow`, `neg`.
 
-### Floating Point Tyoes
+### Floating Point Types
+
+Floating point numbers are also supported by Rust. Rust supports 32 (`f32`) and 64 bit (`f64`) bit floating point numbers. These are also called singles and doubles precision floats respectively. Rust defaults floats to 64 bits (Due to modern 64 bit architecture). Floating point numbers always have a sign. 
+
+
+
+Floats can also be used to represent special values such as the following. We also list their constant keywords: 
+- $-0$
+- $\infty$ and $-\infty$ = `INFINITY` and `NEG_INFINITY`
+- $NaN$ = `NAN`
+
+See the docs for more information on [f32](https://doc.rust-lang.org/std/primitive.f32.html) and [f64](https://doc.rust-lang.org/std/primitive.f64.html) floats.
+
+### Numerical Operations
