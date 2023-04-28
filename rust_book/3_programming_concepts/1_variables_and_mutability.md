@@ -1,6 +1,6 @@
 # Variables and Mutability
 
-By default,rust variables are immutable. Variables can be made into mutable variabels - and we can explore reasons to favor immutability and why sometimes we require mutability.
+By default, rust variables are immutable. Variables can be made into mutable variabels - and we can explore reasons to favor immutability and why sometimes we require mutability.
 
 We will create a new project called variables: `cargo new variables`
 
