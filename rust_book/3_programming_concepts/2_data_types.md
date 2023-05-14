@@ -159,3 +159,80 @@ fn char_dec(){
 ```
 
 ## Compound types
+
+Groups multiple values into one type. Rust supports two primitive compound types: tuples and arrays.
+
+### Tuples
+
+For grouping variety of types into one compound type. Tuples have a fix length. Once they're declared, their size can't change. Tuples are declared by writing a comma separated list of values inside a parenthesis. 
+
+```rust
+fn main(){
+    let tup = (500, 6.4, 1);
+}
+```
+
+When using the variable `tup`, all of the elements of the tuple will be used. To extract individual elements, the tuple can be destructured with pattern matching as follows.
+
+```rust
+fn main(){
+    let tup = (500, 6.4, 1);
+
+    let (x, y, z) = tup;
+
+    println!("{}", x)
+}
+```
+
+A tuples element can also be accessed by using the `.` operator followed by the index of the value.
+
+
+```rust
+fn main(){
+    let tup: (i32, f64, u8) = (500, 6.4, 1);
+
+    println!("{}", tup.0)
+}
+```
+
+There is a special type of tuple, without any values, called the `unit` tuple. Unit values are implicitly returned by expressions that don't return any other value. It's defined by empty parenthesis, `()`.
+
+### Array Type
+
+Arrays are another way of storing multiple values. They differ to tuples since every element of an array must be the same type. They also have a fixed length.
+
+Arrays differ to vectors which can grow or shrink in size. Arrays are useful for when we know the number of elements will not change.
+
+Arrays can be declared by using square brackets with a comma separation. When declaring the type, we can provided the type of the array using the following notation: `[data_type; array_length]`.
+
+```rust
+fn main(){
+    let x: [i32; 5] = [1,2,3,4,5];
+}
+```
+
+An array can also be declared to contain the same constant for the entire length using a semicolon:
+
+```rust
+fn main(){
+    let x = [0; 5];
+}
+```
+
+The elements of an array can be accessed by using brackets followed by the index.
+
+```rust
+fn main(){
+    let x: [i32; 5] = [1,2,3,4,5];
+    println!("{}", x[0]);
+}
+```
+
+Rusts memory safety will prevent us from accessing indexes larger than the array at compile time and run time by generating an error.
+
+```rust
+fn main(){
+    let x: [i32; 5] = [1,2,3,4,5];
+    println!("{}", x[6]);
+}
+```
