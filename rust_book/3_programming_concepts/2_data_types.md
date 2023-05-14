@@ -96,3 +96,66 @@ Floats can also be used to represent special values such as the following. We al
 See the docs for more information on [f32](https://doc.rust-lang.org/std/primitive.f32.html) and [f64](https://doc.rust-lang.org/std/primitive.f64.html) floats.
 
 ### Numerical Operations
+
+Basic numeric operations supported by rust: 
+- Addition: `+`
+- Addition and attribution: `+=`
+- Subtraction: `-`
+- Subtraction and attribution: `-=`
+- Multiplication: `*`
+- Multiplication and attribution: `*=`
+- Division: `/`
+- Division and attribution: `/=`
+- Remainder: `%`
+- Remainder and attribution: `%=`
+ 
+Obs: Integer division truncates down.
+
+```rust
+fn operations() {
+    let mut x = 5;
+    x = (5 + 1 - 2)*2/2
+}
+```
+
+### Boolean Types
+
+Rust supports booleans (defined by the keyword `bool`), which assume one of two values: `true` or `false`. The following operations are supported for boolean types:
+- Bitwise complement (not): `!`
+- Bitwise AND: `&`
+- Short-circuit AND: `&&`
+- Bitwise AND and attribution: `&=`
+- Bitwise XOR: `^`
+- Bitwise XOR and attribution: `^=`
+- Bitwise OR: `|`
+- Bitwise OR and attribution: `|=` 
+- Short-circuit OR: `||`
+- Comparisons: `==`, `!=`, ...
+
+
+Obs: Short-circuiting operations only evaluate the second argument if the first argument doesn't already satisfy the condition.
+
+```rust
+fn boolean_ops(){
+    let x:bool = true;
+    let y:bool = false;
+
+    println!("{}", x && y); // false
+    println!("{}", x || y); // true
+    println!("{}", x ^ y); // true
+    println!("{}", !x); // false
+}
+```
+
+### Character Types
+
+Primitive alphabetic type. Char values can be declared between single quotes. String values use double quotes. `char` types can represent unicode scalar values, so it supports accents, chinese, emojis, etc.
+
+```rust
+fn char_dec(){
+    let c = 'z';
+    let emj = '😻';
+}
+```
+
+## Compound types

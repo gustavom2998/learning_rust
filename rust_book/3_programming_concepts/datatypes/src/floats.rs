@@ -27,7 +27,12 @@ fn special_floats(){
     println!("{}", x);
 }
 
+fn operations() {
+    let x: f64 =  (5.0 + 1.0 - 2.0)*2.0/2.0;
+}
+
 fn main(){
     float_declaration();
     special_floats();
+    operations();
 }
