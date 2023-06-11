@@ -1,6 +1,6 @@
 # Data Types
 
-Rust is statically typed language - so it must know all variables types at compile time. The compiler can usually infer the type we want based on the value. In cases we want to select one of many types, we must add type annotation. For example - we can declare a string of an integer and parse it. This could be an integer or a string - and we will need to use type annotation to specify the type.
+Rust is a statically typed language - so it must know all variables types at compile time. The compiler can usually infer the type we want based on the value. In cases we want to select one of many types, we must add type annotation. For example - we can declare a string of an integer and parse it. This could be an integer or a string - and we will need to use type annotation to specify the type.
 
 ```rust
 fn main(){
@@ -57,7 +57,7 @@ There are many types of integers we can use. By default, integers use `i32`. Bel
 | `isize` | 32 or 64 (Architecture Based) | ^ | ^ | [isize - Rust](https://doc.rust-lang.org/std/primitive.isize.html) |
 | `usize` | 32 or 64 (Architecture Based) | ^ | ^ | [usize - Rust](https://doc.rust-lang.org/std/primitive.usize.html) |
 
-Integers can be declared as decimals, hexes, octals, binary or bytes. The symbol `_` can be used as visual separator, and don't impact the numbers value, e.g `1_000=1000`. The type suffix  can be used to declare numbers with their types explicitly, for example as `57u8`. See the table below for an example:
+Integers can be declared as decimals, hexes, octals, binary or bytes. The symbol `_` can be used as a visual separator, and don't impact the numbers value, e.g `1_000=1000`. The type suffix can be used to declare numbers with their types explicitly, e.g `57u8`. See the table below for an example:
 
 | Number literals | Example |
 | --- | --- |
@@ -69,7 +69,7 @@ Integers can be declared as decimals, hexes, octals, binary or bytes. The symbol
 
 #### Integer Overflows
 
-A variable of type `u8` can stored values between 0 and 255. If we try to set the variable as 256, which is above it's value, it will overflow. This can result in one of two results:
+A variable of type `u8` can store values between 0 and 255. If we try to set the variable as 256, which is above its value, it will overflow. This can result in one of two results:
 1. debug mode: The program panics at runtime.
 2. release mode: Program omits runtime checks. 
 
@@ -149,7 +149,7 @@ fn boolean_ops(){
 
 ### Character Types
 
-Primitive alphabetic type. Char values can be declared between single quotes. String values use double quotes. `char` types can represent unicode scalar values, so it supports accents, chinese, emojis, etc.
+Primitive alphabetic type. Char values can be declared between single quotes. String values use double quotes. `char` types can represent Unicode scalar values, so it supports accents, Chinese, emojis, etc.
 
 ```rust
 fn char_dec(){
@@ -164,7 +164,7 @@ Groups multiple values into one type. Rust supports two primitive compound types
 
 ### Tuples
 
-For grouping variety of types into one compound type. Tuples have a fix length. Once they're declared, their size can't change. Tuples are declared by writing a comma separated list of values inside a parenthesis. 
+For grouping a variety of types into one compound type. Tuples have a fixed length. Once they're declared, their size can't change. Tuples are declared by writing a comma-separated list of values inside a parenthesis. 
 
 ```rust
 fn main(){
@@ -185,7 +185,6 @@ fn main(){
 ```
 
 A tuples element can also be accessed by using the `.` operator followed by the index of the value.
-
 
 ```rust
 fn main(){

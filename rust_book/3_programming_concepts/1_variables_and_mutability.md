@@ -1,6 +1,6 @@
 # Variables and Mutability
 
-By default, rust variables are immutable. Variables can be made into mutable variabels - and we can explore reasons to favor immutability and why sometimes we require mutability.
+By default, rust variables are immutable. Variables can be made into mutable variables - and we can explore reasons to favor immutability and why sometimes we require mutability.
 
 We will create a new project called variables: `cargo new variables`
 
@@ -17,7 +17,7 @@ fn main() {
 
 The script has an error - `x` is being modified even though it is immutable. If we run this script with `cargo run` - we will get a compiler error.
 
-Mutability can be very useful - and we can make our code mutable by adding the `mut` keyword to our code. This is helpful since it indicates that the writer of the code intented to reuse the variable and change its value.
+Mutability can be very useful - and we can make our code mutable by adding the `mut` keyword to our code. This is helpful since it indicates that the writer of the code intended to reuse the variable and change its value.
 
 Adding this to the script now lets us execute it:
 
@@ -32,10 +32,10 @@ fn main() {
 
 ## Constants
 
-Like immutable variables, constants are values that are bound to a nme and are not allowed to change. However, there are some differences between contants and variables:
+Like immutable variables, constants are values that are bound to a name and are not allowed to change. However, there are some differences between constants and variables:
 
 
-- Constants cant be used with the `mut` keyword - they're always imutable
+- Constants cant be used with the `mut` keyword - they're always immutable
 - Constants are declared with the `const` keyword instead of the `let` keyword
 - The type of the constant must always be annotated
 - Constants can be declared in any scope, including global, which makes them useful for values that need to be reused throughout the code and don't change much.
@@ -48,13 +48,13 @@ const THREE_HOURS_IN_SECONDS = u32 = 60 * 60 * 3;
 ```
 
 - The constants name is `THREE_HOURS_IN_SECONDS`
-- It's value is set to the result of multiple 3 integers
+- Its value is set to the result of multiple 3 integers
 - The Rust naming convention for constants is all uppercase with underscores as separators.
   
 
 ## Shadowing
 
-A new variable can be declared with the same name as previous variable. It's a common to say that the first variable is *shadowed* by the second, which means that the second variable is what the compiler will see when you use the name of the variable. A variable can be shadowed by repeating is name and using the `let` keyword to define the variable. The value will be defined until the variable is refined or when the scope ends. For example:
+A new variable can be declared with the same name as a previous variable. It's common to say that the first variable is *shadowed* by the second, which means that the second variable is what the compiler will see when you use the name of the variable. A variable can be shadowed by repeating its name and using the `let` keyword to define the variable. The value will be defined until the variable is refined or when the scope ends. For example:
 
 ```rust
 fn main(){
@@ -69,7 +69,7 @@ fn main(){
 }
 ```
 
-Shadowing is different to marking a variable a mutable. If we accidently try to overwrite the value without using let, we'll get an error. We can use shadowing to process and transform data without having to create new variables for each step. For example, we may want to declare a string of spaces, and then use the same variable to calculate the number of sapces.
+Shadowing is different to marking a variable as mutable. If we accidentally try to overwrite the value without using let, we'll get an error. We can use shadowing to process and transform data without having to create new variables for each step. For example, we may want to declare a string of spaces, and then use the same variable to calculate the number of spaces.
 
 ```rust
 fn main(){
@@ -100,4 +100,3 @@ fn main(){
 }
 
 ```
-

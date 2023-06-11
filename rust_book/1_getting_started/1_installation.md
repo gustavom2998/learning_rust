@@ -35,6 +35,16 @@ these changes will be reverted.
 
 We confirmed the installation with these settings by hitting 1.
 
+## Linux Installation
+
+I've also performed this on WSL. To do this we can run:
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+We press 1 to perform the default installation and wait.
+
 ## Checking installation
 
 ```powershell

@@ -14,7 +14,7 @@ Save the file. We can compile in the terminal with the following command:
 rustc rust_book/1_getting_started/hello_world.rs
 ```
 
-We can the run the compiled program with the following command:
+We can then run the compiled program with the following command:
 
 ```bash
 .\hello_world.exe
@@ -46,8 +46,8 @@ Before running a rust program, we must compile it using the rust compiler by ent
 rustc hello_world.rs
 ```
 
-Files with source code can be identified by the the `.rs` extension. In linux - compiled files don't have an extension. On Windows, compiled files have the `.exe` extension.
+Files with source code can be identified by the the `.rs` extension. On Linux - compiled files don't have an extension. On Windows, compiled files have the `.exe` extension.
 
-As an overview, differently to dynamic languages like Python, rust is an ahead of time compiled language. We compile the code into an executable and some one can run the code even if they don't have rust installed.
+As an overview, differently to dynamic languages like Python, rust is an ahead of time compiled language. We compile the code into an executable and someone can run the code even if they don't have Rust installed.
 
-Compiling with rustc is okay for smaller languages, but we can se Cargo for larger projects, which we'll see in the next topic.
+Compiling with rustc is okay for smaller languages, but we can use Cargo for larger projects, which we'll see in the next topic.

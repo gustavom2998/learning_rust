@@ -3,9 +3,9 @@
 
 ## Introduction
 
-- Comments are useful for helping readers of the code. 
+- Comments are useful for helping readers of the code.
 - The compiler ignores them.
-- Comments in rust are defined by the two slashes `//` followed by the comment content.
+- Comments in Rust are defined by the two slashes `//` followed by the comment content.
   
 ## Single line comment
 
@@ -16,7 +16,7 @@ fn main(){
 }
 ```
 
-## Multi line comment
+## Multi-line comment
 
 - Rust doesn't have a set of characters for commenting out a block of lines.
 - We must use `//` in each line for the block.
@@ -45,4 +45,4 @@ fn main(){
 
 - Explored further in chapter 14.
 - Covers building out Crates, documenting and publishing them.
--  Covers documenting advanced topics we havn't covered yet.
+-  Covers documenting advanced topics we haven't covered yet.

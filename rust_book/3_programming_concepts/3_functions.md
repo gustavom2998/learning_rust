@@ -4,7 +4,7 @@
 
 By now, we've covered `main` functions - the entry points to our programs. 
 
-We also been using the `fn` keyword to declare new functions. Normally, we use the keyword, followed by a function name, a set of parentheses for parameters and curly brackets for the function body.
+We've also been using the `fn` keyword to declare new functions. Normally, we use the keyword, followed by a function name, a set of parentheses for parameters and curly brackets for the function body.
 
 **Snake case**: lower case, words separated by underlines. Rust uses snake case as a convention for function and variable names. 
 
@@ -59,10 +59,10 @@ fn another_function(cost: f64, currency: char){
 
 ## Statements and Expressions
 
-**Statements**: Instructions that performs an action and doesn't return a value.
+**Statements**: Instructions that perform actions and don't return a value.
 - Example: Declaring a value with `let x=1;`
 - Example: A function statement `fn func(){}`
-- We can identify statements by not being able to atribute them to a value.
+- We can identify statements by not being able to atrribute them to a value.
   - Example: `let x=(let y=6);` won't work.
 
 
@@ -84,7 +84,7 @@ fn main(){
 
 ## Return values
 
-Functions can return a value to their callers. Values don't need to be named, but they do need to be typed. Types for a function are specified via an arrow (`->`) after the function parameter declaration. The value of function in Rust is defined by the final expression of the function. The `return` keyword can also be used, but most functions return it implicitly by using the last value.
+Functions can return a value to their callers. Values don't need to be named, but they do need to be typed. Types for a function are specified via an arrow (`->`) after the function parameter declaration. The value of a function in Rust is defined by the final expression of the function. The `return` keyword can also be used, but most functions return it implicitly by using the last value.
 
 ```rust
 fn five() -> i32 {

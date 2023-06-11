@@ -1,8 +1,8 @@
 # Hello, Cargo
 
-Cargo is Rusts build system and package managem. This tool can be used to manage Rust projects - since it handles alot of tasks such as building code, downlooading libraries (code dependencies) and building libraries.
+Cargo is Rusts build system and package manager. This tool can be used to manage Rust projects - since it handles alot of tasks such as building code, downloading libraries (code dependencies) and building libraries.
 
-Cargo comes installed with rust by default. We can check our install with the following snippet:
+Cargo comes installed with Rust by default. We can check our install with the following snippet:
 
 ```bash
 cargo --version
@@ -51,9 +51,9 @@ edition = "2021"
 [dependencies]
 ```
 
-- The first line `[package]` is a section heading that indices that the followings statements are configuring a package. 
+- The first line `[package]` is a section heading that indicates that the following statements are configuring a package. 
 - The next three lines set the configuration information Cargo needs to compile our program - The name version and the Rust edition to use.
-- The last line `[dependecies]` is the start of a section that we can list the project depencies. Packages of code are called *crates* in Rust.
+- The last line `[dependecies]` is the start of a section where we can list the project dependencies. Packages of code are called *crates* in Rust.
 
 If the cargo project isn't within a Git repository already - it also initializes a new Git repository for us.
 
@@ -67,8 +67,8 @@ fn main() {
 }
 ```
 
-- The main differences between our original hello world project and the one generated with Cargo is that cargo places the code in the `src` directory and we have a `Cargo.toml` configuration file.
-- We can convert non-cargo projects into a cargo project by moving the main file into a src directory and creating a `Cargo.toml` file.
+- The main difference between our original hello world project and the one generated with Cargo is that Cargo places the code in the `src` directory and we have a `Cargo.toml` configuration file.
+- We can convert non-cargo projects into a Cargo project by moving the main file into a src directory and creating a `Cargo.toml` file.
 
 ## Building and running a cargo project
 
@@ -84,9 +84,9 @@ Thiscreates an executable file in the directory `target/debug/hello_cargo.exe`. 
 .\target\debug\hello_cargo.exe
 ```
 
-Also, after running cargo build for the first time - Cargo creates a file called `Cargo.lock`. This file keeps track of the versions of the dependencies in our project. This file doesn't need to be modified manually - Cargo manages it for us.
+Also, after running Cargo build for the first time - Cargo creates a file called `Cargo.lock`. This file keeps track of the versions of the dependencies in our project. This file doesn't need to be modified manually - Cargo manages it for us.
 
-We can also use `cargo run` to compile the code and run the resultant executable in one step (which is alot more convenient):
+We can also use `cargo run` to compile the code and run the resultant executable in one step (which is a lot more convenient):
 
 ```bash
 cargo run
@@ -109,4 +109,3 @@ cargo build --release
 ```
 
 This command will create an executable in the `target/release` directory. This executable is optimized for speed and size - but takes longer to build. This is why we have two different profiles - we want speed to build when developing - and speed to execute when deploying.
-
