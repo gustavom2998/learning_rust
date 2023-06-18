@@ -1,6 +1,6 @@
 # Learning Rust
 
-This repository is dedicated for my personal studies in the Rust programming language. 
+This repository is dedicated to learning the basics of the Rust programming language. 
 
 ## Learning Resources
 

@@ -108,4 +108,6 @@ We can build our project for release with the following command:
 cargo build --release
 ```
 
+> Found a problem running this on a fresh WSL ubuntu install (`linker cc not found`). Running `sudo apt-get update`, then `sudo apt install build-essential`, and `sudo apt install cmake` solved the problem with help from this [link](https://www.edivaldobrito.com.br/como-corrigir-o-erro-linker-cc-not-found-no-rust-no-linux/).
+
 This command will create an executable in the `target/release` directory. This executable is optimized for speed and size - but takes longer to build. This is why we have two different profiles - we want speed to build when developing - and speed to execute when deploying.
